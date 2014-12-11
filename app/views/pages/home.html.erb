@@ -1,5 +1,17 @@
 <div class="jumbotron center">
-<h1>I've found the most horrible color combination but I can't look away.</h1>
-<p>Click here to <%= link_to "sign up!", "signup", class:"btn btn-primary btn-lg" %></p>
+  <h1>
+    I've found the most horrible color combination but I can't look away.
+  </h1>
+  <% if user_signed_in? %>
+    # do something
+  <% else %>
+    <p>
+    Click right here to <%= link_to "log in", "#", class:"btn btn-default btn-lg" %> 
+    
+    or
+
+    <%= link_to "sign up!", new_user_registration_path, class:"btn btn-primary btn-lg" %>
+    </p>
+  <% end %>
 </div>
 
